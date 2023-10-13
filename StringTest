@@ -1,0 +1,36 @@
+// Write a Program to take a user-defined input in which 
+// 1. All Upper Case letters should be shifted left by 2 characters
+// 2.All Lower Case letters should be shifted left by 3 characters
+
+// Sample Input:
+// User gives input as "Hello"
+// Output should be: "Fbiil"
+
+import java.util.Scanner;
+
+public class Stringprc {
+    public static void main(String[] args) {
+        String user; // variables declared
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the String"); // asking input to enter the string
+        user = sc.next();
+        StringBuilder output = new StringBuilder();
+
+        for (char cr : user.toCharArray()) // coverting String to chararray
+        {
+
+            if (Character.isUpperCase(cr)) // if input write characters are in upper case then this condition will run
+            {
+                output.append((char) (cr - 2)); // subtract the ASCII value with -2
+            } else if (Character.isLowerCase(cr)) // if input write characters are in lower case then this condition
+                                                  // will run
+            {
+                output.append((char) (cr - 3)); // subtract the ASCII value with -3
+            } else {
+                output.append(cr);
+            }
+
+        }
+        System.out.println("Output:" + output);
+    }
+}
